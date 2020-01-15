@@ -24,6 +24,6 @@ public class CameraLookAtMouse : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         yRotation += mouseX;
 
-        camTransform.SetPositionAndRotation(camTransform.position, Quaternion.Euler(Vector3.right * xRotation + Vector3.up * mouseX));
+        camTransform.SetPositionAndRotation(camTransform.position, Quaternion.Euler(Vector3.right * xRotation + Vector3.up * yRotation));
     }
 }
