@@ -19,7 +19,7 @@ public class OpenDoor : MonoBehaviour
     {   
         // Get YAxis
         Vector3 proximity = playertransform.transform.position - transform.position;
-        if ( proximity.magnitude < 5 && proximity.magnitude > 1 && Open == false ) {
+        if ( proximity.magnitude < 50 && proximity.magnitude > 1 && Open == false ) {
             if ( i > -100) {
                 transform.Rotate(0.0f, -1.0f, 0.0f, Space.World);
                 i-=1;
