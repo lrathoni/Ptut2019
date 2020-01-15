@@ -24,5 +24,13 @@ namespace Valve.VR
                 return SteamVR_Actions.character_Controls_MoveHorizontal;
             }
         }
+        
+        public virtual SteamVR_Action_Single Jump
+        {
+            get
+            {
+                return SteamVR_Actions.character_Controls_Jump;
+            }
+        }
     }
 }

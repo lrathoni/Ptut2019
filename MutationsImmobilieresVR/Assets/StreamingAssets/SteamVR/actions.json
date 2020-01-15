@@ -4,6 +4,11 @@
       "name": "/actions/Character_Controls/in/MoveHorizontal",
       "type": "vector2",
       "requirement": "mandatory"
+    },
+    {
+      "name": "/actions/Character_Controls/in/Jump",
+      "type": "vector1",
+      "requirement": "mandatory"
     }
   ],
   "action_sets": [
