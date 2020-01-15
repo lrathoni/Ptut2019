@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.mutationsimmobilieresvr.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\moi\\Desktop\\MutationsImmobilieres\\Ptut2019\\unity\\MutationsImmobilieresVR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "MutationsImmobilieresVR [Testing]"
+        }
+      }
+    }
+  ]
+}
