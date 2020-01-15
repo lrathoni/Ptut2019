@@ -22,11 +22,5 @@ public class CharacterControls : MonoBehaviour
         Vector3 move = camTransform.right * dl.x + camTransform.forward * dl.y;
         move.y = 0;
         controller.Move(move);
-
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        float up = Input.GetAxis("Jump");
-        Vector3 movement = new Vector3(horizontal, up, vertical);
-        controller.Move(movement * speed);
     }
 }

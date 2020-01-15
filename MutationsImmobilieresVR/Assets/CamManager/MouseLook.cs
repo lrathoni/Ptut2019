@@ -7,6 +7,7 @@ public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity = 100f;
     float xRotation = 0f;
+    public Transform camTransform;
 
     void Start()
     {
@@ -23,6 +24,6 @@ public class MouseLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up* mouseX);
+        camTransform.Rotate(Vector3.up* mouseX);
     }
 }

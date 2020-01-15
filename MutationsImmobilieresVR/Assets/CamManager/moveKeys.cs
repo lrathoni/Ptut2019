@@ -1,8 +1,19 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class moveKeys
+public class moveKeys : Monobehaviour
 {
-	public Class1()
+	public CharacterController;
+
+	void Start()
 	{
+		
+	}
+
+	void Update()
+	{
+
 	}
 }
