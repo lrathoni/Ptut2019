@@ -7,9 +7,13 @@ using Valve.VR;
 public class CharacterControls : MonoBehaviour
 {
     public float speed = 25.0f;
-    public float gravity = -10.0f;
+    public float jumpStrength = 10.0f;
+    public float gravity = -20.0f;
     public CharacterController controller;
     public Transform cameraTransform;
+    public Transform groundCheck;
+    public float groundDistance = 2.5f;
+    public LayerMask groundMask;
 
     public SteamVR_Action_Vector2 moveAction;
     public SteamVR_Action_Single jumpAction;
@@ -26,8 +30,14 @@ public class CharacterControls : MonoBehaviour
         move.y = 0;
         controller.Move(move);
         // Jump
-        float jumpIntensity = jumpAction.GetAxis(handType) + Input.GetAxis("Jump");
-        yVelocity += gravity * Time.deltaTime;
-        controller.Move(Vector3.up * (jumpIntensity+yVelocity*Time.deltaTime));
+        bool isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        float jumpIntensity = 0f;
+        if (isGrounded){
+            yVelocity = -2f;
+            jumpIntensity = Mathf.Pow(jumpAction.GetAxis(handType), 0.02f) + Input.GetAxis("Jump");
+            Debug.Log(jumpIntensity);
+        }
+        yVelocity += gravity * Time.deltaTime + jumpIntensity * jumpStrength;
+        controller.Move(Vector3.up * (yVelocity*Time.deltaTime));
     }
 }
