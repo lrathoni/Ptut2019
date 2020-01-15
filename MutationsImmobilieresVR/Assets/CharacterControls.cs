@@ -7,12 +7,15 @@ using Valve.VR;
 public class CharacterControls : MonoBehaviour
 {
     public float speed = 25.0f;
+    public float gravity = -10.0f;
     public CharacterController controller;
     public Transform cameraTransform;
 
     public SteamVR_Action_Vector2 moveAction;
     public SteamVR_Action_Single jumpAction;
     public SteamVR_Input_Sources handType;
+
+    float yVelocity = 0f;
 
     void Update(){
         // Move X and Z
@@ -24,6 +27,7 @@ public class CharacterControls : MonoBehaviour
         controller.Move(move);
         // Jump
         float jumpIntensity = jumpAction.GetAxis(handType) + Input.GetAxis("Jump");
-        controller.Move(Vector3.up * jumpIntensity);
+        yVelocity += gravity * Time.deltaTime;
+        controller.Move(Vector3.up * (jumpIntensity+yVelocity*Time.deltaTime));
     }
 }
