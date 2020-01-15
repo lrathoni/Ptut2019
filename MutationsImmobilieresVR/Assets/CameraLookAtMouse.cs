@@ -8,6 +8,7 @@ public class CameraLookAtMouse : MonoBehaviour
     public float mouseSensitivity = 100f;
     public Transform camTransform;
     float xRotation = 0f;
+    float yRotation = 0f;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -21,8 +22,8 @@ public class CameraLookAtMouse : MonoBehaviour
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        yRotation += mouseX;
 
-        camTransform.SetPositionAndRotation(camTransform.position, Quaternion.Euler(Vector3.right * xRotation));
-        camTransform.Rotate(Vector3.up * mouseX);
+        camTransform.SetPositionAndRotation(camTransform.position, Quaternion.Euler(Vector3.right * xRotation + Vector3.up * mouseX));
     }
 }
