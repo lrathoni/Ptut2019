@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveKeys : Monobehaviour
+public class moveKeys : MonoBehaviour
 {
-	public CharacterController;
+	public CharacterController ctrl;
 
 	void Start()
 	{

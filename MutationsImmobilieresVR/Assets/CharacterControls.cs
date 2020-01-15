@@ -20,6 +20,7 @@ public class CharacterControls : MonoBehaviour
     void Update(){
         Vector2 dl = speed * Time.deltaTime * moveAction.GetAxis(handType);
         Vector3 move = camTransform.right * dl.x + camTransform.forward * dl.y;
+        Debug.Log(move);
         move.y = 0;
         controller.Move(move);
     }
