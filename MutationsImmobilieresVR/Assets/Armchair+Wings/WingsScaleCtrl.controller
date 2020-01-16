@@ -39,7 +39,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WingsGrow
-  m_Speed: 1
+  m_Speed: 0.33
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5351683926965240103}
@@ -67,7 +67,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -788075057305651813}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -88,8 +88,8 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WingsShrink
-  m_Speed: -1
-  m_CycleOffset: 1
+  m_Speed: -0.33
+  m_CycleOffset: 0
   m_Transitions:
   - {fileID: -31787156064153284}
   m_StateMachineBehaviours: []
