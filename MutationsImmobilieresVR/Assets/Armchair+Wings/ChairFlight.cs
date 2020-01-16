@@ -15,10 +15,11 @@ public class ChairFlight : MonoBehaviour
         Vector2 playerXZ = new Vector2(player.position.x, player.position.z);
         Vector2 chairXZ = new Vector2(transform.position.x, transform.position.z);
         float t = Mathf.Max(1f - (playerXZ - chairXZ).magnitude / minDist, 0f);
+        t = Mathf.Pow(t, 3f);
         float minHeight = t * minFlightHeight;
         float maxHeight = t * maxFlightHeight;
-        float actualHeight = Mathf.Lerp(minHeight, maxHeight, Mathf.PerlinNoise(Time.time * flightPuls, 0f));
-        Debug.Log(t);
+        float actualHeight = Mathf.Lerp(minHeight, maxHeight, Mathf.PerlinNoise(Time.time * flightPuls, Time.time * flightPuls));
+        Debug.Log(Mathf.PerlinNoise(Time.time * flightPuls, Time.time * flightPuls));
         transform.localPosition = new Vector3(transform.localPosition.x, actualHeight, transform.localPosition.z);
     }
 }
