@@ -29,9 +29,9 @@ public class ChairFlight : MonoBehaviour
         float actualHeight = Mathf.Lerp(minHeight, maxHeight, Mathf.PerlinNoise(Time.time * heightPuls, Time.time * heightPuls));
         // XZ movement
         float movRadius = t * maxXZMovementRadius;
-        float angle = Mathf.Lerp(0, Mathf.PI, Mathf.PerlinNoise(Time.time * xzPuls + 50f, Time.time * xzPuls));
-        float actualRadius = Mathf.Lerp(0, movRadius, Mathf.PerlinNoise(Time.time * xzPuls + 100f, Time.time * xzPuls));
-        Vector2 XZpos = actualRadius * new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+        //float angle = Mathf.Lerp(0, Mathf.PI, Mathf.PerlinNoise(Time.time * xzPuls + 50f, Time.time * xzPuls));
+        float actualRadius = Mathf.LerpUnclamped(0, movRadius, Mathf.PerlinNoise(Time.time * xzPuls + 100f, Time.time * xzPuls)*2-1);
+        Vector2 XZpos = new Vector2(actualRadius, 0f);//actualRadius * new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
         // Set transform
         transform.localPosition = new Vector3(XZpos.x, actualHeight, XZpos.y);
         // Wings scale
