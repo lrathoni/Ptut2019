@@ -17,9 +17,9 @@ public class blink : MonoBehaviour
     void Update()
     {
         i++;
-        Debug.Log("i = " + i);
+        //Debug.Log("i = " + i);
         Vector3 proximity = playertransform.transform.position - transform.position;
-        Debug.Log(proximity.magnitude);
+        //Debug.Log(proximity.magnitude);
         if (proximity.magnitude < 20 && proximity.magnitude > 5)
         {
             if (i % 13 == 0)

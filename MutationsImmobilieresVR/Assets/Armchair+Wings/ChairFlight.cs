@@ -5,12 +5,20 @@ using UnityEngine;
 public class ChairFlight : MonoBehaviour
 {
     public Transform player;
-    public float minDist = 10f;
-    public float maxFlightHeight = 3f;
+    public float minDist = 35f;
+    public float minFlightHeight = 0.5f;
+    public float maxFlightHeight = 1.5f;
+    public float flightPuls = 1.8f;
 
     void Update()
     {
-        float t = Mathf.Max(1f - (player.position - transform.position).magnitude / minDist, 0f);
-        //Debug.Log((player.position - transform.position).magnitude);
+        Vector2 playerXZ = new Vector2(player.position.x, player.position.z);
+        Vector2 chairXZ = new Vector2(transform.position.x, transform.position.z);
+        float t = Mathf.Max(1f - (playerXZ - chairXZ).magnitude / minDist, 0f);
+        float minHeight = t * minFlightHeight;
+        float maxHeight = t * maxFlightHeight;
+        float actualHeight = Mathf.Lerp(minHeight, maxHeight, Mathf.PerlinNoise(Time.time * flightPuls, 0f));
+        Debug.Log(t);
+        transform.localPosition = new Vector3(transform.localPosition.x, actualHeight, transform.localPosition.z);
     }
 }
