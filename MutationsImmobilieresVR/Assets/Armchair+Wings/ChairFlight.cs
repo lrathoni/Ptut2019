@@ -38,14 +38,14 @@ public class ChairFlight : MonoBehaviour
         if (t > 0.0001f)
         {
             if (!bWasInRangeLastFrame)
-                wingsScaleAnimator.Play("WingsGrow");
+                wingsScaleAnimator.Play("WingsGrow", 0, 1f - Mathf.Min(1f, wingsScaleAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime));
             //wings.localScale = new Vector3(maxWingsScale, maxWingsScale, maxWingsScale);
             bWasInRangeLastFrame = true;
         }
         else
         {
             if (bWasInRangeLastFrame)
-                wingsScaleAnimator.Play("WingsShrink");
+                wingsScaleAnimator.Play("WingsShrink", 0, 1f - Mathf.Min(1f, wingsScaleAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime));
             //wings.localScale = new Vector3(0, 0, 0);
             bWasInRangeLastFrame = false;
         }
