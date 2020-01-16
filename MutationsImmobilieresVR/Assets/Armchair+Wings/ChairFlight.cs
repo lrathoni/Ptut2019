@@ -5,14 +5,17 @@ using UnityEngine;
 public class ChairFlight : MonoBehaviour
 {
     public Transform player;
-    public Transform wings;
-    public float maxWingsScale = 0.381f;
+    //public Transform wings;
+    //public float maxWingsScale = 0.381f;
+    public Animator wingsScaleAnimator;
     public float minDist = 35f;
     public float minFlightHeight = 0.5f;
     public float maxFlightHeight = 1.5f;
     public float maxXZMovementRadius = 2f;
     public float heightPuls = 0.8f;
     public float xzPuls = 0.02f;
+
+    bool bWasInRangeLastFrame = false;
 
     void Update()
     {
@@ -32,8 +35,22 @@ public class ChairFlight : MonoBehaviour
         // Set transform
         transform.localPosition = new Vector3(XZpos.x, actualHeight, XZpos.y);
         // Wings scale
-        float tWings = Mathf.Min(t * 5f, 1f);
-        float scl = maxWingsScale * tWings;
-        wings.localScale = new Vector3(scl, scl, scl);
+        if (t > 0.0001f)
+        {
+            if (!bWasInRangeLastFrame)
+                wingsScaleAnimator.Play("WingsGrow");
+            //wings.localScale = new Vector3(maxWingsScale, maxWingsScale, maxWingsScale);
+            bWasInRangeLastFrame = true;
+        }
+        else
+        {
+            if (bWasInRangeLastFrame)
+                wingsScaleAnimator.Play("WingsShrink");
+            //wings.localScale = new Vector3(0, 0, 0);
+            bWasInRangeLastFrame = false;
+        }
+        //float tWings = Mathf.Min(t * 5f, 1f);
+        //float scl = maxWingsScale * tWings;
+        //wings.localScale = new Vector3(scl, scl, scl);
     }
 }
