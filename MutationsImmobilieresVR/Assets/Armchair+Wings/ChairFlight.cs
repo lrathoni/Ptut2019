@@ -5,6 +5,8 @@ using UnityEngine;
 public class ChairFlight : MonoBehaviour
 {
     public Transform player;
+    public Transform wings;
+    public float maxWingsScale = 0.381f;
     public float minDist = 35f;
     public float minFlightHeight = 0.5f;
     public float maxFlightHeight = 1.5f;
@@ -21,5 +23,9 @@ public class ChairFlight : MonoBehaviour
         float actualHeight = Mathf.Lerp(minHeight, maxHeight, Mathf.PerlinNoise(Time.time * flightPuls, Time.time * flightPuls));
         Debug.Log(Mathf.PerlinNoise(Time.time * flightPuls, Time.time * flightPuls));
         transform.localPosition = new Vector3(transform.localPosition.x, actualHeight, transform.localPosition.z);
+        // Wings scale
+        float tWings = Mathf.Min(t * 5f, 1f);
+        float scl = maxWingsScale * tWings;
+        wings.localScale = new Vector3(scl, scl, scl);
     }
 }
