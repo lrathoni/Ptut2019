@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{5247CA47-255B-8731-01FD-8F1D3CB1B4BE}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Table/MoveTable.cs">
+    <Files>
+      <File FileName="Assets/Armchair+Wings/ChairFlight.cs" Line="35" Column="25" />
+      <File FileName="Assets/Table/MoveTable.cs" Line="25" Column="39" />
+      <File FileName="../../../Trial/Assets/Scripts/Bomb.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MutationsImmobilieresVR" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Armchair+Wings" expanded="True" />
+              <Node name="Table" expanded="True">
+                <Node name="MoveTable.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b7f7eb4f-0675-4d51-9f78-f6e96266e0b5" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
