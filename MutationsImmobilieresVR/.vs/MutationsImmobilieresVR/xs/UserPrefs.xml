@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{5247CA47-255B-8731-01FD-8F1D3CB1B4BE}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Trial/Assets/Scripts/CubeMover.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TallLamp/tallLampColor.cs">
     <Files>
       <File FileName="Assets/Armchair+Wings/ChairFlight.cs" Line="35" Column="25" />
-      <File FileName="Assets/Table/MoveTable.cs" Line="33" Column="29" />
-      <File FileName="../../../Trial/Assets/Scripts/Bomb.cs" Line="14" Column="43" />
-      <File FileName="../../../Trial/Assets/Scripts/CubeMover.cs" Line="21" Column="55" />
+      <File FileName="Assets/Table/MoveTable.cs" Line="38" Column="84" />
+      <File FileName="../../../Trial/Assets/Scripts/Bomb.cs" />
+      <File FileName="../../../Trial/Assets/Scripts/CubeMover.cs" />
+      <File FileName="Assets/TallLamp/tallLampColor.cs" Line="13" Column="30" />
+      <File FileName="Assets/Lamp/blink.cs" Line="12" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,8 +14,10 @@
           <Node name="MutationsImmobilieresVR" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Armchair+Wings" expanded="True" />
-              <Node name="Table" expanded="True">
-                <Node name="MoveTable.cs" selected="True" />
+              <Node name="Lamp" expanded="True" />
+              <Node name="Table" expanded="True" />
+              <Node name="TallLamp" expanded="True">
+                <Node name="tallLampColor.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -23,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d35727cc-8bea-42bc-8615-90cef32b875c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dc861c7e-5053-4d29-b1d0-9225ab514bc5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
