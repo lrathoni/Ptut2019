@@ -7,7 +7,7 @@ using UnityEngine;
 public class MoveTable : MonoBehaviour
 {
     public Transform player;
-    public Rigidbody rb;
+    public CharacterController charCtrl;
     public Vector3 bottom_left = new Vector3(240, 0, 219);
     public Vector3 bottom_right = new Vector3(203, 0, 219);
     public Vector3 up_left = new Vector3(240, 0, 153);
@@ -24,7 +24,7 @@ public class MoveTable : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        charCtrl = GetComponent<CharacterController>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -37,13 +37,13 @@ public class MoveTable : MonoBehaviour
     {
         //if the player is in a corner of the room, the table will move towards him
         if (distanceXZ(player.position, bottom_left) < 6)
-            transform.Translate(new Vector3(0.5f, 0f, 1f));
+            charCtrl.Move(new Vector3(0.5f, 0f, 1f));
         if (distanceXZ(player.position, bottom_right) < 6)
-            transform.Translate(new Vector3(-0.5f, 0f, 1f));
+            charCtrl.Move(new Vector3(-0.5f, 0f, 1f));
         if (distanceXZ(player.position, up_left) < 6)
-            transform.Translate(new Vector3(0.5f, 0f, -1f));
+            charCtrl.Move(new Vector3(0.5f, 0f, -1f));
         if (distanceXZ(player.position, up_right) < 6)
-            transform.Translate(new Vector3(-0.5f, 0f, -1f));
+            charCtrl.Move(new Vector3(-0.5f, 0f, -1f));
     }
 }
 
