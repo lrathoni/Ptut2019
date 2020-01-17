@@ -37,13 +37,13 @@ public class MoveTable : MonoBehaviour
     {
         //if the player is in a corner of the room, the table will move towards him
         if (distanceXZ(player.position, bottom_left) < 6)
-            transform.position = new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z + 1);
+            transform.Translate(new Vector3(0.5f, 0f, 1f));
         if (distanceXZ(player.position, bottom_right) < 6)
-            transform.position = new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z + 1);
+            transform.Translate(new Vector3(-0.5f, 0f, 1f));
         if (distanceXZ(player.position, up_left) < 6)
-            transform.position = new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z - 1);
+            transform.Translate(new Vector3(0.5f, 0f, -1f));
         if (distanceXZ(player.position, up_right) < 6)
-            transform.position = new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z - 1);
+            transform.Translate(new Vector3(-0.5f, 0f, -1f));
     }
 }
 
