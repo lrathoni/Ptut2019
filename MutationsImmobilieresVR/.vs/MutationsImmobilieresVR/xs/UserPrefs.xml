@@ -3,10 +3,10 @@
     <Files>
       <File FileName="Assets/Armchair+Wings/ChairFlight.cs" Line="35" Column="25" />
       <File FileName="Assets/Table/MoveTable.cs" Line="38" Column="84" />
-      <File FileName="../../../Trial/Assets/Scripts/Bomb.cs" />
+      <File FileName="../../../Trial/Assets/Scripts/Bomb.cs" Line="9" Column="59" />
       <File FileName="../../../Trial/Assets/Scripts/CubeMover.cs" />
-      <File FileName="Assets/TallLamp/tallLampColor.cs" Line="13" Column="30" />
       <File FileName="Assets/Lamp/blink.cs" Line="12" Column="9" />
+      <File FileName="Assets/TallLamp/tallLampColor.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
