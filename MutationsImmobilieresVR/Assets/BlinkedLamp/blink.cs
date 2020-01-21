@@ -9,7 +9,7 @@ public class blink : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Light>().range = 3;
+        GetComponent<Light>().range = 2;
         GetComponent<Light>().intensity = 5;
     }
 
