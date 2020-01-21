@@ -18,7 +18,7 @@ public class EnableCloth : MonoBehaviour
         {
             Vector3 collision = playertransform.position;
             Vector3 center = transform.position;
-            Debug.Log("DistanceCloth = " + (center - collision).magnitude);
+            //Debug.Log("DistanceCloth = " + (center - collision).magnitude);
             if ((center - collision).magnitude < 3)
             {
                  GetComponent<Cloth>().enabled = true;

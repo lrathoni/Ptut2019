@@ -35,7 +35,6 @@ public class CharacterControls : MonoBehaviour
         if (isGrounded){
             yVelocity = -2f;
             jumpIntensity = Mathf.Pow(jumpAction.GetAxis(handType), 0.02f) + Input.GetAxis("Jump");
-            Debug.Log(jumpIntensity);
         }
         yVelocity += gravity * Time.deltaTime + jumpIntensity * jumpStrength;
         controller.Move(Vector3.up * (yVelocity*Time.deltaTime));
