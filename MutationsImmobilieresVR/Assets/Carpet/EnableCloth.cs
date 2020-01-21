@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnableCloth : MonoBehaviour
 {
     public Transform playertransform;
-    int waiting = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +16,11 @@ public class EnableCloth : MonoBehaviour
     {
         if (GetComponent<Cloth>().enabled == false)
         {
-            Debug.Log("Cloth distance entrée dans le code");
-                Vector3 collision = playertransform.position;
-                Vector3 center = transform.position;
+            Vector3 collision = playertransform.position;
+            Vector3 center = transform.position;
             Debug.Log("DistanceCloth = " + (center - collision).magnitude);
             if ((center - collision).magnitude < 3)
             {
-                 Debug.Log("waiting = " + waiting);
                  GetComponent<Cloth>().enabled = true;
             }
             
