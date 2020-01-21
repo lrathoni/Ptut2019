@@ -1492,7 +1492,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1848727749}
-  - component: {fileID: 1848727750}
   - component: {fileID: 1848727751}
   m_Layer: 16
   m_Name: Mirror
@@ -1517,20 +1516,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1848727750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848727748}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecdb10896485d8148abebec7db707f13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCam: {fileID: 4000014127893296}
-  mirrorCam: {fileID: 1404019882}
 --- !u!114 &1848727751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3008,7 +2993,7 @@ PrefabInstance:
     - target: {fileID: 3866202501418167354, guid: 4d727534d40f72649b8084b6892e8a1c,
         type: 3}
       propertyPath: field of view
-      value: 57.9
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 3866202501418167354, guid: 4d727534d40f72649b8084b6892e8a1c,
         type: 3}
@@ -3028,12 +3013,12 @@ PrefabInstance:
     - target: {fileID: 3866202501418167356, guid: 4d727534d40f72649b8084b6892e8a1c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3866202501418167356, guid: 4d727534d40f72649b8084b6892e8a1c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.19
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 3866202501418167356, guid: 4d727534d40f72649b8084b6892e8a1c,
         type: 3}
