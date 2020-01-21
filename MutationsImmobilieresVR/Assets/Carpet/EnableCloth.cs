@@ -9,6 +9,7 @@ public class EnableCloth : MonoBehaviour
     void Start()
     {
         GetComponent<Cloth>().enabled = false;
+        GetComponent<BoxCollider>().enabled = true;
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class EnableCloth : MonoBehaviour
             if ((center - collision).magnitude < 3)
             {
                  GetComponent<Cloth>().enabled = true;
+                GetComponent<BoxCollider>().enabled = false;
             }
             
         }
