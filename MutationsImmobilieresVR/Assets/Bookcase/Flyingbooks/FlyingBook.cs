@@ -10,6 +10,8 @@ public class FlyingBook : MonoBehaviour
     public Transform book2Transform;
     public Transform book3Transform;
 
+    bool BooksMove = false;
+
     bool PlayerIn;
     // Start is called before the first frame update
     void Start()
@@ -22,9 +24,15 @@ public class FlyingBook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerIn == true)
+        if (BooksMove == true)
         {
-            //if ()
+            if (PlayerIn == true)
+            {
+                if (transform.position.x < 233f)
+                    transform.Translate(0.1f, 0f, 0f); 
+            }
         }
+
+       // Vector3 bookDirection = 
     }
 }
