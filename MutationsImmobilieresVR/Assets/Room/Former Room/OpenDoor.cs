@@ -11,6 +11,11 @@ public class OpenDoor : MonoBehaviour
     bool OpenActivated = false;
     bool PlayerIn = false;
 
+    public bool valuePlayerIn()
+    {
+        return PlayerIn;
+    }
+
     // Update is called once per frame
     void Update()
     {   
