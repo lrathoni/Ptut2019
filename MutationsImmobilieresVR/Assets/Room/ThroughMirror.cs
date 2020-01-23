@@ -17,7 +17,6 @@ public class ThroughMirror : MonoBehaviour
     void Update()
     {
         Vector3 proximity = playerTransform.transform.position - mirrorTransform.transform.position;
-        Debug.Log("Mirror prox = " + proximity.magnitude);
         if (proximity.magnitude < 6)
         {
             GetComponent<MeshCollider>().enabled = false;

@@ -53,6 +53,5 @@ public class OpenDoor : MonoBehaviour
         {
             PlayerIn = true;
         }
-        //Debug.Log("PlayeEntered = " + PlayerEntered.magnitude);
     }
 }
