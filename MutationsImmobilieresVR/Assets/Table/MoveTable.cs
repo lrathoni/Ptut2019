@@ -27,10 +27,6 @@ public class MoveTable : MonoBehaviour
         charCtrl = GetComponent<CharacterController>();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //transform.position = new Vector3(0,80,0);
-    }
 
     // Update is called once per frame
     void Update()
