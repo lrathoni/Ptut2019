@@ -6,7 +6,7 @@ using UnityEngine;
 public class MovingBlocks : MonoBehaviour 
 { 
     Transform CubetoMove; 
-    List<int> ChildPosition; 
+    List<int> ChildPosition = new List<int>();
     bool initialization = false; 
     int[] Rescale = new int[100]; 
     int[] IntervalRescale = new int[100]; 
@@ -34,8 +34,8 @@ public class MovingBlocks : MonoBehaviour
                 if (AlreadyIn(ref positionTab,ref  cubePosition) == false) 
                 { 
                     positionTab.Add(cubePosition); 
-                    Rescale[i] = Random.Range(150, 1000); 
-                    IntervalRescale[i] = Random.Range(1, 20); 
+                    Rescale[i] = Random.Range(150, 200); 
+                    IntervalRescale[i] = Random.Range(10, 20); 
             } 
                 else 
                     i--; 
@@ -51,8 +51,8 @@ public class MovingBlocks : MonoBehaviour
     void Update() 
     { 
         if (initialization == false) 
-        { 
-            InitCubeListMoving(ref ChildPosition); 
+        {
+            InitCubeListMoving(ref ChildPosition);
             initialization = true; 
         } 
  
@@ -60,12 +60,12 @@ public class MovingBlocks : MonoBehaviour
         { 
             for (int i = 0; i < ChildPosition.Count; i++) 
             { 
-                CubetoMove = this.gameObject.transform.GetChild(i); 
+                CubetoMove = this.gameObject.transform.GetChild(ChildPosition[i]); 
                 if (CubetoMove.transform.localScale.y >= 100) 
                 { 
                     CubetoMove.transform.localScale += new Vector3(0f, revert * IntervalRescale[i], 0f); 
                     if (CubetoMove.transform.localScale.y > Rescale[i] && goFar == false) 
-                    { 
+                    {
                         revert = -1; 
                         goFar = true; 
                     } 
@@ -73,7 +73,7 @@ public class MovingBlocks : MonoBehaviour
                 if (CubetoMove.transform.localScale.y < 100) 
                 { 
                     goFar = false; 
-                    revert = 1; 
+                    revert = 1;
                 } 
             } 
         } 
