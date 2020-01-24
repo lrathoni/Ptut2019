@@ -13,6 +13,6 @@ public class LightsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Event id : " + eventsManager.getEventID());
+        //Debug.Log("Event id : " + eventsManager.getEventID());
     }
 }
