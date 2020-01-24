@@ -14,7 +14,7 @@ public class EnableDeformation : MonoBehaviour
 
     void OnEventIDChange(int id)
     {
-        if (id == 3)
+        if (id == 7)
         {
             //script.enabled = true;
             //animator.Play("DeformationIn", 0, 1f - Mathf.Min(1f, animator.GetCurrentAnimatorStateInfo(0).normalizedTime));
