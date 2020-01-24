@@ -8,8 +8,8 @@ public class MovingBlocks : MonoBehaviour
     Transform CubetoMove; 
     List<int> ChildPosition = new List<int>();
     bool initialization = false; 
-    int[] Rescale = new int[100]; 
-    int[] IntervalRescale = new int[100]; 
+    float[] Rescale = new float[100];
+    float[] IntervalRescale = new float[100]; 
     int revert = 1; 
     bool goFar = false; 
  
@@ -25,7 +25,7 @@ public class MovingBlocks : MonoBehaviour
  
     private void InitCubeListMoving(ref List<int> positionTab) 
     { 
-        int NbMove = Random.Range(1, 100); 
+        int NbMove = Random.Range(1, 10); 
         int cubePosition = Random.Range(0, 99); 
         positionTab.Add(cubePosition); 
             for (int i = 1; i < NbMove; i++) 
@@ -34,9 +34,9 @@ public class MovingBlocks : MonoBehaviour
                 if (AlreadyIn(ref positionTab,ref  cubePosition) == false) 
                 { 
                     positionTab.Add(cubePosition); 
-                    Rescale[i] = Random.Range(150, 200); 
-                    IntervalRescale[i] = Random.Range(10, 20); 
-            } 
+                    Rescale[i] = Random.Range(150, 1000);
+                    IntervalRescale[i] = Random.Range(1f, 10f);
+                } 
                 else 
                     i--; 
             } 
@@ -61,20 +61,7 @@ public class MovingBlocks : MonoBehaviour
             for (int i = 0; i < ChildPosition.Count; i++) 
             { 
                 CubetoMove = this.gameObject.transform.GetChild(ChildPosition[i]); 
-                if (CubetoMove.transform.localScale.y >= 100) 
-                { 
-                    CubetoMove.transform.localScale += new Vector3(0f, revert * IntervalRescale[i], 0f); 
-                    if (CubetoMove.transform.localScale.y > Rescale[i] && goFar == false) 
-                    {
-                        revert = -1; 
-                        goFar = true; 
-                    } 
-                } 
-                if (CubetoMove.transform.localScale.y < 100) 
-                { 
-                    goFar = false; 
-                    revert = 1;
-                } 
+                CubetoMove.transform.localScale = new Vector3(100f, 100f, 100 + Mathf.Abs(Mathf.Sin(Time.time + IntervalRescale[i]) * Rescale[i]) );
             } 
         } 
  
