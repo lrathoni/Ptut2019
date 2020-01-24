@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class EventsManager : MonoBehaviour
 {
+    public GameObject[] observers;
+
     Transform RoomTransform;
     Vector3 RoomMeshSize;
     Transform PlayerTransform;
+    int prevID = -1;
 
     public float timeBetweenEventChangeInSeconds = 15f;
     private void Start()
@@ -25,5 +28,17 @@ public class EventsManager : MonoBehaviour
                        +2*(distZ < 0 ? 0 : 1);
         int timeID = Mathf.RoundToInt(Time.time / timeBetweenEventChangeInSeconds);
         return (quadrantID + timeID)% 4;
+    }
+
+    private void Update()
+    {
+        int id = getEventID();
+        if (id != prevID)
+        {
+            foreach(GameObject obj in observers){
+                obj.SendMessage("OnEventIDChange", id);
+            }
+        }
+        prevID = id;
     }
 }

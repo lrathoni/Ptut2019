@@ -38,6 +38,15 @@ public class DeformMesh : MonoBehaviour
         UploadVertices();
     }
 
+    public void resetMesh()
+    {
+        for (int i = 0; i < originalVertices.Count; ++i)
+        {
+            modifiedVertices[i] = originalVertices[i];
+        }
+        UploadVertices();
+    }
+
     void UploadVertices()
     {
         mesh.SetVertices(modifiedVertices);

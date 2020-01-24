@@ -5,19 +5,19 @@ using UnityEngine;
 public class EnableDeformation : MonoBehaviour
 {
     private DeformMesh script;
-    private EventsManager eventsManager;
     void Awake()
     {
-        eventsManager = GameObject.FindObjectOfType<EventsManager>();
         script = GetComponent<DeformMesh>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnEventIDChange(int id)
     {
-        if (eventsManager.getEventID() == 3)
+        if (id == 3)
             script.enabled = true;
         else
+        {
             script.enabled = false;
+            script.resetMesh();
+        }
     }
 }
