@@ -27,7 +27,7 @@ public class EventsManager : MonoBehaviour
         int quadrantID =  (distX < 0 ? 0 : 1)
                        +2*(distZ < 0 ? 0 : 1);
         int timeID = Mathf.RoundToInt(Time.time / timeBetweenEventChangeInSeconds);
-        return (quadrantID + timeID)% 4;
+        return (quadrantID + timeID)% 4 + (Mathf.FloorToInt(Time.time / 60f)%2) * 4;
     }
 
     private void Update()
@@ -35,6 +35,7 @@ public class EventsManager : MonoBehaviour
         int id = getEventID();
         if (id != prevID)
         {
+            Debug.Log("Entering event : " + id);
             foreach(GameObject obj in observers){
                 obj.SendMessage("OnEventIDChange", id);
             }
