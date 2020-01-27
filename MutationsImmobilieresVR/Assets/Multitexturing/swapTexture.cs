@@ -7,7 +7,7 @@ public class swapTexture : MonoBehaviour
 
     public Texture[] textures;
     public Renderer m_Renderer;
-    public float changeInterval = 0.33F;
+    public float changeInterval = 0.033F;
 
     // Start is called before the first frame update
     void Start()
