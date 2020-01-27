@@ -27,7 +27,7 @@ public class MovingBlocks : MonoBehaviour
 
     private void InitCubeListMoving(ref List<int> positionTab)
     {
-        int NbMove = Random.Range(0,99);
+        int NbMove = Random.Range(0,30);
         for (int i = 0; i < NbMove; i++)
         {
             int cubePosition = Random.Range(0, 99);
