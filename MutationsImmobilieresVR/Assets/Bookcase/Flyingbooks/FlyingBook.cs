@@ -21,7 +21,6 @@ public class FlyingBook : MonoBehaviour
     void Update()
     {
             Vector3 proximity = CornerRightBackTransform.transform.position - playerTransform.transform.position;
-            //Debug.Log("BooksAttack = " + proximity.magnitude);
             if (proximity.magnitude < 3 && BooksMove == true)
             {
                 GetComponent<Animator>().enabled = true;
