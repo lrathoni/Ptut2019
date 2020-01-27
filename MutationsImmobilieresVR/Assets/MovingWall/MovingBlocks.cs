@@ -13,7 +13,6 @@ public class MovingBlocks : MonoBehaviour
     float[] IntervalRescale = new float[100];
     bool goback = false;
     float comparedScale = 0f;
-    float value;
 
     private bool AlreadyIn(ref List<int> positionTab, ref int AddPosition)
     {
@@ -27,7 +26,7 @@ public class MovingBlocks : MonoBehaviour
 
     private void InitCubeListMoving(ref List<int> positionTab)
     {
-        int NbMove = Random.Range(0,30);
+        int NbMove = Random.Range(20,60);
         for (int i = 0; i < NbMove; i++)
         {
             int cubePosition = Random.Range(0, 99);
@@ -45,7 +44,6 @@ public class MovingBlocks : MonoBehaviour
     // Start is called before the first frame update  
     void Start()
     {
-        value = 0.1f;
         if (cubeMat.Length ==0)
             return;
     }
