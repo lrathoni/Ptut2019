@@ -5,12 +5,14 @@ using UnityEngine;
 public class blink : MonoBehaviour
 {
     float i = 0;
+    float maxIntensity;
     public Transform playertransform;
+    Light light;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Light>().range = 2;
-        GetComponent<Light>().intensity = 5;
+        light = GetComponent<Light>();
+        maxIntensity = light.intensity;
     }
 
     // Update is called once per frame
@@ -23,15 +25,15 @@ public class blink : MonoBehaviour
         if (proximity.magnitude < 20 && proximity.magnitude > 5)
         {
             if (i % 13 == 0)
-                GetComponent<Light>().intensity = 0;
+                light.intensity = 0;
             if (i % 8 == 0)
-                GetComponent<Light>().intensity = 5;
+                light.intensity = maxIntensity;
             if (i == 1000)
                 i = 0;
         }
         if (proximity.magnitude < 5)
-            GetComponent<Light>().intensity = 0;
+            light.intensity = 0;
         if (proximity.magnitude > 20)
-            GetComponent<Light>().intensity = 5;
+            light.intensity = maxIntensity;
     }
 }

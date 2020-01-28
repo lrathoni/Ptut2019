@@ -32,7 +32,12 @@ public class DeformMesh : MonoBehaviour
     {
         for (int i = 0; i < originalVertices.Count; ++i)
         {
-            modifiedVertices[i] = originalVertices[i] + normals[i] * amplitude * (float)NoiseS3D.Noise(originalVertices[i].x*scale, originalVertices[i].y*scale, originalVertices[i].z * scale, Time.time*speed);
+            //Vector3 dir = normals[i];
+            float r1 = (float)NoiseS3D.Noise(originalVertices[i].x * scale+1001.12441, originalVertices[i].y * scale, originalVertices[i].z * scale, Time.time * speed);
+            float r2 = (float)NoiseS3D.Noise(originalVertices[i].x * scale +124.1278, originalVertices[i].y * scale, originalVertices[i].z * scale, Time.time * speed);
+            float r3 = (float)NoiseS3D.Noise(originalVertices[i].x * scale + 5201.75141, originalVertices[i].y * scale, originalVertices[i].z * scale, Time.time * speed);
+            Vector3 dir = new Vector3(r1, r2, r3).normalized;
+            modifiedVertices[i] = originalVertices[i] + dir * amplitude * (float)NoiseS3D.Noise(originalVertices[i].x*scale, originalVertices[i].y*scale, originalVertices[i].z * scale, Time.time*speed);
         }
 
         UploadVertices();
