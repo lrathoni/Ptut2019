@@ -6,6 +6,8 @@ public class EventsManager : Singleton<EventsManager>
 {
     protected EventsManager() { }
 
+    //int permut[] = { 2}
+
     public GameObject[] observers;
 
     Transform RoomTransform;
