@@ -6,7 +6,7 @@ public class EventsManager : Singleton<EventsManager>
 {
     protected EventsManager() { }
 
-    //int permut[] = { 2}
+    int[] permut = { 2, 5, 1, 4, 7, 0, 8, 3, 6 };
 
     public GameObject[] observers;
 
@@ -29,8 +29,8 @@ public class EventsManager : Singleton<EventsManager>
         int XID = Mathf.FloorToInt(distX * 3);
         int ZID = Mathf.FloorToInt(distZ * 3);
         int cellID = XID + 3 * ZID;
-        int timeID = Mathf.RoundToInt(Time.time / timeBetweenEventChangeInSeconds);
-        return (cellID + timeID)% 9 + (Mathf.FloorToInt(Time.time / 60f)%2) * 9;
+        int timeID = Mathf.RoundToInt(Time.time / timeBetweenEventChangeInSeconds) % 9;
+        return (cellID + permut[timeID]) % 9 + (Mathf.FloorToInt(Time.time / 60f)%2) * 9;
     }
 
     private void Update()
