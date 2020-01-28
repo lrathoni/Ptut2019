@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class LightsManager : MonoBehaviour
 {
-    private EventsManager eventsManager;
     void Awake()
     {
-        eventsManager = GameObject.FindObjectOfType<EventsManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Event id : " + eventsManager.getEventID());
+        Debug.Log("Event id : " + EventsManager.I.getEventID());
     }
 }
