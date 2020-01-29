@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MainRoom
   - MainCharacter
+  - Room1
+  - Room2
   layers:
   - Default
   - TransparentFX
