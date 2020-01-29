@@ -10,21 +10,32 @@ public class EventsManager : Singleton<EventsManager>
 
     public GameObject[] observers;
 
-    Transform RoomTransform;
+    Transform Room1Transform;
+    Transform Room2Transform;
     Transform PlayerTransform;
     int prevID = -1;
 
     public float timeBetweenEventChangeInSeconds = 15f;
     private void Start()
     {
-        RoomTransform = GameObject.FindGameObjectWithTag("MainRoom").transform;
+        Room1Transform = GameObject.FindGameObjectWithTag("Room1").transform;
+        Room2Transform = GameObject.FindGameObjectWithTag("Room2").transform;
         PlayerTransform = GameObject.FindGameObjectWithTag("MainCharacter").transform;
     }
     public int getEventID()
     {
-        Vector3 roomSize = Matrix4x4.Scale(RoomTransform.parent.localScale) * RoomTransform.localScale;
-        float distX = (RoomTransform.position.x - PlayerTransform.position.x) / roomSize.x / 1.74f + 0.5f;
-        float distZ = (RoomTransform.position.z - PlayerTransform.position.z) / roomSize.z / 228f + 0.5f;
+    	float distX, distZ;
+    	if( PlayerTransform.position.x > 200f){
+	        Vector3 room1Size = Matrix4x4.Scale(Room1Transform.parent.localScale) * Room1Transform.localScale;
+	        distX = (Room1Transform.position.x - PlayerTransform.position.x) / room1Size.x / 1.74f + 0.5f;
+	        distZ = (Room1Transform.position.z - PlayerTransform.position.z) / room1Size.z / 228f + 0.5f;
+	    }
+	    else{
+	        Vector3 room2Size = Room2Transform.localScale;
+	        distX = (Room2Transform.position.x - PlayerTransform.position.x) / room2Size.x / 40f;
+	        distZ = (Room2Transform.position.z - PlayerTransform.position.z) / room2Size.z / 23.5f + 2f;
+	    }
+        Debug.Log("X : " + distX + "Z : " + distZ);
         int XID = Mathf.FloorToInt(distX * 3);
         int ZID = Mathf.FloorToInt(distZ * 3);
         int cellID = XID + 3 * ZID;
