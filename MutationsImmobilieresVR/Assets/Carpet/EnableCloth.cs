@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnableCloth : MonoBehaviour
 {
+    public Transform FloorRoom2;
     public Transform playertransform;
+
+    bool falling = false;
+    float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +29,22 @@ public class EnableCloth : MonoBehaviour
             {
                 GetComponent<Cloth>().enabled = true;
                 GetComponent<BoxCollider>().enabled = false;
+                FloorRoom2.GetComponent<BoxCollider>().enabled = false;
+                falling = true;
             }
-            
+        }
+        if (falling == true)
+        {
+            timer += Time.deltaTime;
+        }
+
+
+        Debug.Log("time to " + timer);
+        if (timer > 3f)
+        {
+            playertransform.transform.position = new Vector3(68.7f, 2.5f, 195.9f);
+            GetComponent<EnableCloth>().enabled = false;
+            FloorRoom2.GetComponent<BoxCollider>().enabled = true;
         }
     }
 }

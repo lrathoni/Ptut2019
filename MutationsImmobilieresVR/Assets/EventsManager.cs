@@ -25,7 +25,6 @@ public class EventsManager : Singleton<EventsManager>
         Vector3 roomSize = Matrix4x4.Scale(RoomTransform.parent.localScale) * RoomTransform.localScale;
         float distX = (RoomTransform.position.x - PlayerTransform.position.x) / roomSize.x / 1.74f + 0.5f;
         float distZ = (RoomTransform.position.z - PlayerTransform.position.z) / roomSize.z / 228f + 0.5f;
-        Debug.Log("X : " + distX + "Z : " + distZ);
         int XID = Mathf.FloorToInt(distX * 3);
         int ZID = Mathf.FloorToInt(distZ * 3);
         int cellID = XID + 3 * ZID;
