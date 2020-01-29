@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MovingBlocks : MonoBehaviour
 {
+
+    public Transform carpetTransform;
     public Material[] cubeMat;
     Transform CubetoMove;
     List<int> ChildPosition = new List<int>();
@@ -13,6 +15,8 @@ public class MovingBlocks : MonoBehaviour
     float[] IntervalRescale = new float[100];
     bool goback = false;
     float comparedScale = 0f;
+
+    float timer = 0f;
 
     private bool AlreadyIn(ref List<int> positionTab, ref int AddPosition)
     {
@@ -26,7 +30,7 @@ public class MovingBlocks : MonoBehaviour
 
     private void InitCubeListMoving(ref List<int> positionTab)
     {
-        int NbMove = Random.Range(20,60);
+        int NbMove = Random.Range(20,40);
         for (int i = 0; i < NbMove; i++)
         {
             int cubePosition = Random.Range(0, 99);
@@ -46,6 +50,7 @@ public class MovingBlocks : MonoBehaviour
     {
         if (cubeMat.Length ==0)
             return;
+        GetComponentInParent<ExitAppear>().enabled = false;
     }
 
     // Update is called once per frame  
@@ -57,7 +62,7 @@ public class MovingBlocks : MonoBehaviour
             initialization = true;
         }
 
-        if (initialization == true)
+        if (initialization == true )
         {
             for (int i = 0; i < ChildPosition.Count; i++)
             {
@@ -84,6 +89,18 @@ public class MovingBlocks : MonoBehaviour
                     CubetoMove.GetComponent<MeshRenderer>().material = cubeMat[Random.Range(0, cubeMat.Length -1)];
                 }
             }
+        }
+
+
+        if (carpetTransform.GetComponent<BoxCollider>().enabled == false)
+        {
+            timer += Time.deltaTime;
+        }
+
+        if (timer >= 60f)
+        {
+            GetComponent<MovingBlocks>().enabled = false;
+            GetComponentInParent<ExitAppear>().enabled = true;
         }
     }
 }
