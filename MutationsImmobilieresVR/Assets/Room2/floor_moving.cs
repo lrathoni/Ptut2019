@@ -18,7 +18,7 @@ public class floor_moving : MonoBehaviour
 	void Update()
 	{
 		material.SetTextureScale("_MainTex", new Vector2(value, value));
-		value += 0.001f;
+		value += 0.002f;
 		
 		if (System.Math.Abs(value - 1) < 0.1f) value = 0.1f;
 		m_Renderer.material = material;
