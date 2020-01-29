@@ -5,7 +5,7 @@ using UnityEngine;
 public class borromeen_script : MonoBehaviour
 {
     public Transform player;
-    public float x, y;
+    public float x;
 
     private void Start()
     {
@@ -15,7 +15,6 @@ public class borromeen_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        y = (player.position - transform.position).magnitude;
         //if the player is far enough the object will increase in size
         if ((player.position - transform.position).magnitude > 25) 
         {

@@ -1,16 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.ItemProperties.SteamVR__Editor PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Borromeen/borromeen_script.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Table/MoveTable.cs">
     <Files>
-      <File FileName="Assets/ThreePaintings/frame_change_text.cs" Line="7" Column="1" />
-      <File FileName="Assets/Room2/floor_moving.cs" Line="28" Column="1" />
-      <File FileName="Assets/EventsManager.cs" />
-      <File FileName="Assets/Multitexturing/swapTexture.cs" />
+      <File FileName="Assets/Piky/piky_mvmt.cs" Line="28" Column="42" />
       <File FileName="Assets/DeformMesh.cs" />
-      <File FileName="Assets/Table/MoveTable.cs" />
+      <File FileName="Assets/Table/MoveTable.cs" Line="1" Column="1" />
       <File FileName="Assets/TallLamp/tallLampColor.cs" />
-      <File FileName="Assets/Borromeen/borromeen_script.cs" Line="19" Column="53" />
-      <File FileName="Assets/BlinkedLamp/blink.cs" Line="1" Column="1" />
+      <File FileName="Assets/Borromeen/borromeen_script.cs" />
+      <File FileName="Assets/ThreePaintings/frame_change_text.cs" Line="25" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,10 +16,13 @@
             <Node name="Assembly-CSharp" expanded="True">
               <Node name="Assets" expanded="True">
                 <Node name="BlinkedLamp" expanded="True" />
-                <Node name="Borromeen" expanded="True">
-                  <Node name="borromeen_script.cs" selected="True" />
-                </Node>
+                <Node name="Borromeen" expanded="True" />
+                <Node name="Piky" expanded="True" />
                 <Node name="Room2" expanded="True" />
+                <Node name="Table" expanded="True">
+                  <Node name="MoveTable.cs" selected="True" />
+                </Node>
+                <Node name="ThreePaintings" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -32,7 +32,6 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8f9d6f3d-4e36-4e19-baba-07b5f252544e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
