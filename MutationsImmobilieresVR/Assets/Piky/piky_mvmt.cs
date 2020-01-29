@@ -6,7 +6,6 @@ public class piky_mvmt : MonoBehaviour
 {
     public Transform player;
     public float x;
-    float posx, posy, posz;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +25,11 @@ public class piky_mvmt : MonoBehaviour
         {
             x -= 0.02f;
         }
-        transform.position = new Vector3( x, x/10, x+1);
-        transform.localScale = new Vector3(x, x, x);
 
         if (x > 5) x = 0;
         if (x < 0) x = 0;
+
+        transform.position = new Vector3( x, x/10, x+1);
+        transform.localScale = new Vector3(x, x, x);
     }
 }
