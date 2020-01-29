@@ -25,12 +25,14 @@ public class EventsManager : Singleton<EventsManager>
     public int getEventID()
     {
     	float distX, distZ;
+    	int roomID = 0;
     	if( PlayerTransform.position.x > 200f){
 	        Vector3 room1Size = Matrix4x4.Scale(Room1Transform.parent.localScale) * Room1Transform.localScale;
 	        distX = (Room1Transform.position.x - PlayerTransform.position.x) / room1Size.x / 1.74f + 0.5f;
 	        distZ = (Room1Transform.position.z - PlayerTransform.position.z) / room1Size.z / 228f + 0.5f;
 	    }
 	    else{
+	    	roomID = 18;
 	        Vector3 room2Size = Room2Transform.localScale;
 	        distX = (Room2Transform.position.x - PlayerTransform.position.x) / room2Size.x / 40f;
 	        distZ = (Room2Transform.position.z - PlayerTransform.position.z) / room2Size.z / 23.5f + 2f;
@@ -40,7 +42,7 @@ public class EventsManager : Singleton<EventsManager>
         int ZID = Mathf.FloorToInt(distZ * 3);
         int cellID = XID + 3 * ZID;
         int timeID = Mathf.RoundToInt(Time.time / timeBetweenEventChangeInSeconds) % 9;
-        return (cellID + permut[timeID]) % 9 + (Mathf.FloorToInt(Time.time / 60f)%2) * 9;
+        return roomID + (cellID + permut[timeID]) % 9 + (Mathf.FloorToInt(Time.time / 60f)%2) * 9;
     }
 
     private void Update()
