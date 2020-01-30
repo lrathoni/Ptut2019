@@ -10,6 +10,7 @@ public class ReturnRoom1 : MonoBehaviour
     public Transform player;
     public Transform RoomMusic;
 
+    bool musicOff = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +35,22 @@ public class ReturnRoom1 : MonoBehaviour
 
             for (int i=0; i < CubeRoom.childCount; i++)
             {
-                CubeRoom.GetComponentInChildren<MovingBlocks>().enabled = true;
+                CubeRoom.transform.GetChild(i).GetComponent<MovingBlocks>().enabled = true;
             }
+            RoomMusic.GetComponent<AudioSource>().enabled = true;
+            musicOff = true;
         }
         Debug.Log("Return proximity " + proximity.magnitude);
-        
-        GetComponent<ReturnRoom1>().enabled = false;
+
+        if (RoomMusic.GetComponent<AudioSource>().volume < 0.8f && musicOff == true)
+        {
+            RoomMusic.GetComponent<AudioSource>().volume += Time.deltaTime * 0.2f;
+            CubeRoom.GetComponent<AudioSource>().volume -= Time.deltaTime * 0.4f;
+        }
+        if (RoomMusic.GetComponent<AudioSource>().volume > 0.8f && musicOff == true)
+        {
+            CubeRoom.GetComponent<AudioSource>().enabled = false;
+            musicOff = false;
+        }
     }
 }

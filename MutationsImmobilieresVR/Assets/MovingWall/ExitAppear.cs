@@ -38,13 +38,6 @@ public class ExitAppear : MonoBehaviour
             }
         }
 
-/*        if ( transform.localScale != new Vector3(4f, 4f, 4f))
-        {
-            transform.localScale = transform.localScale + new Vector3(4f, 4f, -0.05f);
-            if (transform.localScale.z < 4.05f)
-                transform.localScale = new Vector3(4f, 4f, 4f);
-        }
-*/
         timer += Time.deltaTime;
 
         if (timer > 30f)
@@ -59,6 +52,8 @@ public class ExitAppear : MonoBehaviour
 
             ExitDoor.GetComponent<MeshRenderer>().enabled = true;
             ExitDoor.GetComponent<ReturnRoom1>().enabled = true;
+            timer = 0f;
+            GetComponent<ExitAppear>().enabled = false;
         }
     }
 }

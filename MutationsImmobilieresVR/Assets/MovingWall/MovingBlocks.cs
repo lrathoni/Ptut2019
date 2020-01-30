@@ -103,6 +103,7 @@ public class MovingBlocks : MonoBehaviour
             if (timer >= 60f)
         {
             GetComponent<MovingBlocks>().enabled = false;
+            timer = 0f;
             GetComponentInParent<ExitAppear>().enabled = true;
         }
     }
