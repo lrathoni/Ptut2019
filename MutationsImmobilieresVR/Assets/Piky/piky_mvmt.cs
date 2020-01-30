@@ -31,7 +31,7 @@ public class piky_mvmt : MonoBehaviour
         if (x > 2) x = 0;
         if (x < 0) x = 0;
 
-		charCtrl.Move(new Vector3(x/10, x/100, x/10));
+		charCtrl.Move(new Vector3(x/10f, x/100f, x/10f));
 		transform.localScale = new Vector3(5*x, 5*x, 5*x);
         light.intensity = 4 * x;
     }
