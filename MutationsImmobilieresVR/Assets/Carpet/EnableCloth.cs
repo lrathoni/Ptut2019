@@ -38,9 +38,10 @@ public class EnableCloth : MonoBehaviour
             timer += Time.deltaTime;
         }
 
+/*        if (timer <7f && playertransform.transform.position.y<-620f)
+            playertransform.transform.position += new Vector3(0f, 50f, 0f);*/
 
-        Debug.Log("time to " + timer);
-        if (timer > 3f)
+        if (timer > 7f)
         {
             playertransform.transform.position = new Vector3(68.7f, 2.5f, 195.9f);
             GetComponent<EnableCloth>().enabled = false;
