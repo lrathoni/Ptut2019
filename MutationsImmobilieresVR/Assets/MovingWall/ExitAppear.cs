@@ -8,13 +8,16 @@ public class ExitAppear : MonoBehaviour
     Transform Wall;
     Transform Cube;
 
+    public Transform ExitDoor;
+
     float timer = 0f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ExitDoor.GetComponent<MeshRenderer>().enabled = false;
+        ExitDoor.GetComponent<ReturnRoom1>().enabled = false;
     }
 
     // Update is called once per frame
@@ -53,6 +56,9 @@ public class ExitAppear : MonoBehaviour
                 Wall.transform.GetChild(indexDoor[i]).GetComponent<MeshRenderer>().enabled = false;
                 Wall.transform.GetChild(indexDoor[i]).GetComponent<BoxCollider>().enabled = false;
             }
+
+            ExitDoor.GetComponent<MeshRenderer>().enabled = true;
+            ExitDoor.GetComponent<ReturnRoom1>().enabled = true;
         }
     }
 }

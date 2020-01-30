@@ -97,7 +97,10 @@ public class MovingBlocks : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if (timer >= 60f)
+        if (carpetTransform.GetComponent<BoxCollider>().enabled == true)
+            timer = 0f;
+
+            if (timer >= 60f)
         {
             GetComponent<MovingBlocks>().enabled = false;
             GetComponentInParent<ExitAppear>().enabled = true;

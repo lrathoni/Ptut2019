@@ -22,10 +22,10 @@ public class flatMusic : MonoBehaviour
         if (GetComponent<AudioSource>().volume == 0)
             playerIn = false;
 
-        if (proximity.magnitude < 10f)
+        if (proximity.magnitude < 5f)
             playerIn = true;
 
-        Debug.Log("Music flat prox = " + proximity.magnitude);
+        
         
         if (playerIn == true)
         {
@@ -43,8 +43,5 @@ public class flatMusic : MonoBehaviour
             RoomMusic.GetComponent<AudioSource>().volume = 0;
             RoomMusic.GetComponent<AudioSource>().enabled = false;
         }
-
-        Debug.Log("Music flat volume = " + GetComponent<AudioSource>().volume);
-        Debug.Log("Music flat enable = " + GetComponent<AudioSource>().enabled);
     }
 }
