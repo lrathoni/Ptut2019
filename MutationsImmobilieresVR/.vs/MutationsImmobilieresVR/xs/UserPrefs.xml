@@ -1,17 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.ItemProperties.SteamVR__Editor PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Chair_scripts/chair_up.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Chair_scripts/chairs_dance.cs">
     <Files>
-      <File FileName="Assets/Piky/piky_mvmt.cs" Line="24" Column="8" />
-      <File FileName="Assets/Table/MoveTable.cs" Line="36" Column="52" />
-      <File FileName="Assets/DeformMesh.cs" Line="1" Column="1" />
-      <File FileName="Assets/TallLamp/tallLampColor.cs" Line="10" Column="12" />
-      <File FileName="Assets/Borromeen/borromeen_script.cs" Line="32" Column="57" />
-      <File FileName="Assets/ThreePaintings/frame_change_text.cs" />
-      <File FileName="Assets/Honey/honey_mvmt.cs" Line="23" Column="61" />
+      <File FileName="Assets/Piky/piky_mvmt.cs" Line="50" Column="3" />
+      <File FileName="Assets/Table/MoveTable.cs" Line="10" Column="41" />
       <File FileName="Assets/chairs_dance.cs" Line="16" Column="16" />
       <File FileName="Assets/Chair_scripts/chair_scale.cs" Line="7" Column="1" />
-      <File FileName="Assets/Chair_scripts/chair_up.cs" Line="20" Column="20" />
+      <File FileName="Assets/Chair_scripts/chair_up.cs" Line="32" Column="30" />
+      <File FileName="Assets/Bottle_scripts/bottle1_anim.cs" Line="22" Column="1" />
+      <File FileName="Assets/Bottle_scripts/bottle2_anim.cs" Line="19" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,12 +17,14 @@
             <Node name="Assembly-CSharp" expanded="True">
               <Node name="Assets" expanded="True">
                 <Node name="Borromeen" expanded="True" />
+                <Node name="Bottle_scripts" expanded="True" />
                 <Node name="Chair_scripts" expanded="True">
-                  <Node name="chair_up.cs" selected="True" />
+                  <Node name="chairs_dance.cs" selected="True" />
                 </Node>
                 <Node name="Honey" expanded="True" />
                 <Node name="Piky" expanded="True" />
                 <Node name="Table" expanded="True" />
+                <Node name="TallLamp" expanded="True" />
               </Node>
             </Node>
           </Node>

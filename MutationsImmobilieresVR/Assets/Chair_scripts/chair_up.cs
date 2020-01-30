@@ -29,7 +29,7 @@ public class chair_up : MonoBehaviour
         //if x between 0 and 0.3, go up
         //if x below 0, go up
         //if x over 0.3, go down
-        if (x > 0f && x < 0.3f)
+        if (x > 0f && x < 0.4f)
             go_up = true;
         else if (x > 0.3f)
             go_up = false;
