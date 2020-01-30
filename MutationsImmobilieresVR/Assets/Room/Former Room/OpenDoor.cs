@@ -54,11 +54,14 @@ public class OpenDoor : MonoBehaviour
             PlayerIn = true;
         }
 
-/*        if (PlayerIn == true)
+        if (PlayerIn == true )
         {
             GetComponentInParent<AudioSource>().enabled = true;
         }
+        if (GetComponentInParent<AudioSource>().enabled == true && GetComponentInParent<AudioSource>().volume < 0.8)
+            GetComponentInParent<AudioSource>().volume += Time.deltaTime * 0.5f;
 
-        if ()*/
+        if (GetComponentInParent<AudioSource>().volume > 0.8 && i == 0)
+            GetComponent<OpenDoor>().enabled = false;
     }
 }

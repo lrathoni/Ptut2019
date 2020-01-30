@@ -37,7 +37,6 @@ public class EventsManager : Singleton<EventsManager>
 	        distX = (Room2Transform.position.x - PlayerTransform.position.x) / room2Size.x / 40f;
 	        distZ = (Room2Transform.position.z - PlayerTransform.position.z) / room2Size.z / 23.5f + 2f;
 	    }
-        Debug.Log("X : " + distX + "Z : " + distZ);
         int XID = Mathf.FloorToInt(distX * 3);
         int ZID = Mathf.FloorToInt(distZ * 3);
         int cellID = XID + 3 * ZID;

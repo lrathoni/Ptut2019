@@ -7,7 +7,9 @@ public class EnableCloth : MonoBehaviour
 {
     public Transform FloorRoom2;
     public Transform playertransform;
-
+    public Transform MusicCubeRoom;
+    public Transform MusicFlat;
+    bool teleportation = false;
     bool falling = false;
     float timer = 0;
     // Start is called before the first frame update
@@ -15,6 +17,8 @@ public class EnableCloth : MonoBehaviour
     {
         GetComponent<Cloth>().enabled = false;
         GetComponent<BoxCollider>().enabled = true;
+        MusicCubeRoom.GetComponent<AudioSource>().volume = 0;
+        MusicCubeRoom.GetComponent<AudioSource>().enabled = false;
     }
 
     // Update is called once per frame
@@ -24,13 +28,13 @@ public class EnableCloth : MonoBehaviour
         {
             Vector3 collision = playertransform.position;
             Vector3 center = transform.position;
-            //Debug.Log("DistanceCloth = " + (center - collision).magnitude);
             if ((center - collision).magnitude < 3)
             {
                 GetComponent<Cloth>().enabled = true;
                 GetComponent<BoxCollider>().enabled = false;
                 FloorRoom2.GetComponent<BoxCollider>().enabled = false;
                 falling = true;
+                MusicCubeRoom.GetComponent<AudioSource>().enabled = true;
             }
         }
         if (falling == true)
@@ -38,14 +42,26 @@ public class EnableCloth : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-/*        if (timer <7f && playertransform.transform.position.y<-620f)
-            playertransform.transform.position += new Vector3(0f, 50f, 0f);*/
 
-        if (timer > 7f)
+        if (timer > 7f )
         {
-            playertransform.transform.position = new Vector3(68.7f, 2.5f, 195.9f);
-            GetComponent<EnableCloth>().enabled = false;
+            if (teleportation == false)
+            {
+                playertransform.transform.position = new Vector3(68.7f, 2.5f, 195.9f);
+                teleportation = true;
+            }
             FloorRoom2.GetComponent<BoxCollider>().enabled = true;
+        }
+
+        if (MusicCubeRoom.GetComponent<AudioSource>().volume < 0.8 && falling == true)
+        {
+            MusicCubeRoom.GetComponent<AudioSource>().volume += Time.deltaTime * 0.2f;
+            MusicFlat.GetComponent<AudioSource>().volume -= Time.deltaTime * 0.4f;
+        }
+
+        if (MusicCubeRoom.GetComponent<AudioSource>().volume >= 0.8)
+        {
+            MusicFlat.GetComponent<AudioSource>().enabled = false;
         }
     }
 }
