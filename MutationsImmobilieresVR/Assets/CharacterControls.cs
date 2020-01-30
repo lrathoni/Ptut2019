@@ -29,6 +29,10 @@ public class CharacterControls : MonoBehaviour
         Vector3 move = cameraTransform.right * dl.x + cameraTransform.forward * dl.y;
         move.y = 0;
         controller.Move(move);
+        if (move.magnitude > 0.001f)
+            GetComponent<AudioSource>().enabled = true;
+        if (move.magnitude < 0.001f)
+            GetComponent<AudioSource>().enabled = false;
         // Jump
         bool isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         float jumpIntensity = 0f;

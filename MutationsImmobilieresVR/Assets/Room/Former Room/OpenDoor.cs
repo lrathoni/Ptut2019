@@ -53,5 +53,12 @@ public class OpenDoor : MonoBehaviour
         {
             PlayerIn = true;
         }
+
+/*        if (PlayerIn == true)
+        {
+            GetComponentInParent<AudioSource>().enabled = true;
+        }
+
+        if ()*/
     }
 }
