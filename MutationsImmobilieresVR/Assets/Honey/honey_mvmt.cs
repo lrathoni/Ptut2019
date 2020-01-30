@@ -6,6 +6,7 @@ public class honey_mvmt : MonoBehaviour
 {
     public Transform player;
     public float x;
+    int id;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,11 @@ public class honey_mvmt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        id = EventsManager.I.getEventID();
+
+        if (id > 2)
+            transform.rotation = new Quaternion(0, 0, 1, 0);
+
         //if the player is far enough the object will increase in size
         if ((player.position - transform.position).magnitude > 25)
         {
