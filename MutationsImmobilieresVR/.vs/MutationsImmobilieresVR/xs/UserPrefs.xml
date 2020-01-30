@@ -1,15 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.ItemProperties.SteamVR__Editor PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Deformable Sphere/SphereScaleAnimationCtrl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Chair_scripts/chair_up.cs">
     <Files>
-      <File FileName="Assets/Piky/piky_mvmt.cs" Line="34" Column="49" />
+      <File FileName="Assets/Piky/piky_mvmt.cs" Line="24" Column="8" />
       <File FileName="Assets/Table/MoveTable.cs" Line="36" Column="52" />
       <File FileName="Assets/DeformMesh.cs" Line="1" Column="1" />
-      <File FileName="Assets/TallLamp/tallLampColor.cs" />
-      <File FileName="Assets/Borromeen/borromeen_script.cs" />
+      <File FileName="Assets/TallLamp/tallLampColor.cs" Line="10" Column="12" />
+      <File FileName="Assets/Borromeen/borromeen_script.cs" Line="32" Column="57" />
       <File FileName="Assets/ThreePaintings/frame_change_text.cs" />
-      <File FileName="Assets/Honey/honey_mvmt.cs" Line="26" Column="22" />
-      <File FileName="Assets/Deformable Sphere/SphereScaleAnimationCtrl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Honey/honey_mvmt.cs" Line="23" Column="61" />
+      <File FileName="Assets/chairs_dance.cs" Line="16" Column="16" />
+      <File FileName="Assets/Chair_scripts/chair_scale.cs" Line="7" Column="1" />
+      <File FileName="Assets/Chair_scripts/chair_up.cs" Line="20" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,16 +19,13 @@
           <Node name="MutationsImmobilieresVR" expanded="True">
             <Node name="Assembly-CSharp" expanded="True">
               <Node name="Assets" expanded="True">
-                <Node name="BlinkedLamp" expanded="True" />
                 <Node name="Borromeen" expanded="True" />
-                <Node name="Deformable Sphere" expanded="True">
-                  <Node name="SphereScaleAnimationCtrl.cs" selected="True" />
+                <Node name="Chair_scripts" expanded="True">
+                  <Node name="chair_up.cs" selected="True" />
                 </Node>
                 <Node name="Honey" expanded="True" />
                 <Node name="Piky" expanded="True" />
-                <Node name="Room2" expanded="True" />
                 <Node name="Table" expanded="True" />
-                <Node name="ThreePaintings" expanded="True" />
               </Node>
             </Node>
           </Node>
