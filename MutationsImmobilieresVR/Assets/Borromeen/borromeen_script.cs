@@ -6,6 +6,7 @@ public class borromeen_script : MonoBehaviour
 {
     public Transform player;
     public float x;
+    int id;
 
     private void Start()
     {
@@ -15,6 +16,10 @@ public class borromeen_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        id = EventsManager.I.getEventID();
+
+        if (id < 3) x = x / 2;
+
         //if the player is far enough the object will increase in size
         if ((player.position - transform.position).magnitude > 25) 
         {
