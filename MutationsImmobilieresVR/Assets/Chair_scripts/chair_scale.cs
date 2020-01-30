@@ -24,8 +24,8 @@ public class chair_scale : MonoBehaviour
         else
             transform.localScale = new Vector3(0, x, x);
 
-        if (x > 0 && x < 10)
-            x += 1f;
+        if (x > 0 && x < 2.5f)
+            x += 0.1f;
         else
             x = 1f;
 
