@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class piky_mvmt : MonoBehaviour
 {
+    public CharacterController charCtrl;
     public Transform player;
     public float x;
+    public Light light;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
         x = 1;
     }
@@ -26,10 +28,11 @@ public class piky_mvmt : MonoBehaviour
             x -= 0.02f;
         }
 
-        if (x > 5) x = 0;
+        if (x > 2) x = 0;
         if (x < 0) x = 0;
 
-        transform.position = new Vector3( x, x/10, x+1);
-        transform.localScale = new Vector3(x, x, x);
+		charCtrl.Move(new Vector3(x/10, x/100, x/10));
+		transform.localScale = new Vector3(5*x, 5*x, 5*x);
+        light.intensity = 4 * x;
     }
 }
