@@ -6,7 +6,6 @@ public class flatMusic : MonoBehaviour
 {
     public Transform player;
     public Transform RoomMusic;
-    public Transform Carpet;
 
     bool playerIn = false;
     // Start is called before the first frame update
@@ -21,7 +20,7 @@ public class flatMusic : MonoBehaviour
     {
         Vector3 proximity = player.transform.position - transform.position;
 
-        if (proximity.magnitude < 5f && GetComponent<AudioSource>().volume == 0f)
+        if (proximity.magnitude < 3f && GetComponent<AudioSource>().volume == 0f)
             playerIn = true;
 
         if (playerIn == true)
