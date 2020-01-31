@@ -3,12 +3,11 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Chair_scripts/chair_scale.cs">
     <Files>
       <File FileName="Assets/Piky/piky_mvmt.cs" Line="50" Column="3" />
-      <File FileName="Assets/Table/MoveTable.cs" Line="10" Column="41" />
-      <File FileName="Assets/chairs_dance.cs" Line="20" Column="20" />
+      <File FileName="Assets/Table/MoveTable.cs" />
       <File FileName="Assets/Chair_scripts/chair_scale.cs" Line="28" Column="20" />
-      <File FileName="Assets/Chair_scripts/chair_up.cs" Line="32" Column="30" />
-      <File FileName="Assets/Bottle_scripts/bottle1_anim.cs" Line="32" Column="1" />
-      <File FileName="Assets/Bottle_scripts/bottle2_anim.cs" Line="26" Column="22" />
+      <File FileName="Assets/Chair_scripts/chair_up.cs" />
+      <File FileName="Assets/Bottle_scripts/bottle1_anim.cs" />
+      <File FileName="Assets/Bottle_scripts/bottle2_anim.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
