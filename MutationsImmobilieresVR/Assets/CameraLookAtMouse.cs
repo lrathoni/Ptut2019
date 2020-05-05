@@ -8,7 +8,7 @@ public class CameraLookAtMouse : MonoBehaviour
     public float mouseSensitivity = 100f;
     public Transform camTransform;
     float xRotation = 0f;
-    float yRotation = 0f;
+    float yRotation = 180f;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
