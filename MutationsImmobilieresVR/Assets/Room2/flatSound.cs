@@ -18,7 +18,6 @@ public class flatSound : MonoBehaviour
         void Update()
         {
             Vector3 proximity = player.transform.position - transform.position;
-            Debug.Log("Flat 2 " + proximity.magnitude);
             if (proximity.magnitude < 4f && GetComponent<AudioSource>().volume == 0f)
                 playerIn = true;
 
@@ -30,7 +29,6 @@ public class flatSound : MonoBehaviour
                 {
                     FlatMusic.GetComponent<AudioSource>().volume += Time.deltaTime * 0.1f;
                     RoomMusic.GetComponent<AudioSource>().volume -= Time.deltaTime * 0.3f;
-                    Debug.Log("je retire");
                 }
 
                 if (GetComponent<AudioSource>().volume > 0.8f && playerIn == true)
