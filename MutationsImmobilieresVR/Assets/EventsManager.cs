@@ -49,7 +49,6 @@ public class EventsManager : Singleton<EventsManager>
         int id = getEventID();
         if (id != prevID)
         {
-            Debug.Log("Entering event : " + id);
             foreach(GameObject obj in observers){
                 obj.SendMessage("OnEventIDChange", id);
             }

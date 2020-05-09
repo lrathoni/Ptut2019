@@ -23,12 +23,12 @@ public class ExtMove : MonoBehaviour
     void Update()
     {
         Vector3 proximity = player.transform.position - transform.position;
-        if ( proximity.magnitude < 11 && proximity.magnitude > 10)
+        if ( proximity.magnitude < 15 && proximity.magnitude > 14)
         {
             Glasses[0].GetComponent<MeshRenderer>().material.mainTexture = ExtTexture[0];
             Glasses[1].GetComponent<MeshRenderer>().material.mainTexture = ExtTexture[0];
         }
-        if (proximity.magnitude <= 10)
+        if (proximity.magnitude <= 14)
         {
             Glasses[0].GetComponent<MeshRenderer>().material.mainTexture = ExtTexture[1];
             Glasses[1].GetComponent<MeshRenderer>().material.mainTexture = ExtTexture[3];

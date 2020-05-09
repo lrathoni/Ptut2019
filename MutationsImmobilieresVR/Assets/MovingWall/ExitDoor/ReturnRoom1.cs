@@ -40,7 +40,6 @@ public class ReturnRoom1 : MonoBehaviour
             RoomMusic.GetComponent<AudioSource>().enabled = true;
             musicOff = true;
         }
-        Debug.Log("Return proximity " + proximity.magnitude);
 
         if (RoomMusic.GetComponent<AudioSource>().volume < 0.8f && musicOff == true)
         {
@@ -50,6 +49,7 @@ public class ReturnRoom1 : MonoBehaviour
         if (RoomMusic.GetComponent<AudioSource>().volume > 0.8f && musicOff == true)
         {
             CubeRoom.GetComponent<AudioSource>().enabled = false;
+            CubeRoom.GetComponent<AudioSource>().volume = 0;
             musicOff = false;
         }
     }

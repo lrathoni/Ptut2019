@@ -18,25 +18,26 @@ public class flatSound : MonoBehaviour
         void Update()
         {
             Vector3 proximity = player.transform.position - transform.position;
-
-            if (proximity.magnitude < 5f && GetComponent<AudioSource>().volume == 0f)
+            Debug.Log("Flat 2 " + proximity.magnitude);
+            if (proximity.magnitude < 4f && GetComponent<AudioSource>().volume == 0f)
                 playerIn = true;
 
             if (playerIn == true)
             {
-                RoomMusic.GetComponent<AudioSource>().enabled = true;
+                FlatMusic.GetComponent<AudioSource>().enabled = true;
 
-                if (RoomMusic.GetComponent<AudioSource>().volume < 0.8f && playerIn == true)
+                if (FlatMusic.GetComponent<AudioSource>().volume < 0.8f && playerIn == true)
                 {
-                    RoomMusic.GetComponent<AudioSource>().volume += Time.deltaTime * 0.1f;
-                    FlatMusic.GetComponent<AudioSource>().volume -= Time.deltaTime * 0.3f;
+                    FlatMusic.GetComponent<AudioSource>().volume += Time.deltaTime * 0.1f;
+                    RoomMusic.GetComponent<AudioSource>().volume -= Time.deltaTime * 0.3f;
+                    Debug.Log("je retire");
                 }
 
                 if (GetComponent<AudioSource>().volume > 0.8f && playerIn == true)
                 {
-                    FlatMusic.GetComponent<AudioSource>().volume = 0;
+                    RoomMusic.GetComponent<AudioSource>().volume = 0;
                     playerIn = false;
-                    FlatMusic.GetComponent<AudioSource>().enabled = false;
+                    RoomMusic.GetComponent<AudioSource>().enabled = false;
                 }
             }
         }
