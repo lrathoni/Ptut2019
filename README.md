@@ -29,7 +29,7 @@ Path : ./Contents/MacOS/MutationsImmobilieresVR
 
 1. Create a new folder  MutationsImmobilieresExe for example
 2. Open project in Unity
-3. In File > Build Settings > PC, Mac & Linux Standalone > Target Platform, slect your OS.
+3. In File > Build Settings > PC, Mac & Linux Standalone > Target Platform, select your OS.
 4. Click on Build
 
 ### Then you will find the .exe to run the application.
