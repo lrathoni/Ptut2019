@@ -1,2 +1,2 @@
 # Ptut2019
-Creation of a strange room where objects and space are transformed based on the position of the user.
+Creation of a weird room where objects and space are transformed in function of the position of the user
