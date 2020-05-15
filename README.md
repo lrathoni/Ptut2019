@@ -12,15 +12,19 @@ Structure of folders :
 
 ## You can download the executable :
 *WINDOWS LINK*
+
 https://www.dropbox.com/sh/pdu3r1lbb2o410a/AABMNbYqoL1p2CI7u-HGlu8ja?dl=0
+
 Path : ./MutationsImmobilieresVR.exe
 
 *MAC LINK*
+
 https://www.dropbox.com/sh/473369e7xkq61o9/AAC2SbEoxP6UyHTaq3cYm3i6a?dl=0
+
 Path : ./Contents/MacOS/MutationsImmobilieresVR
 
 
-##If you want to build de the executable : 
+## If you want to build de the executable : 
 
 1. Create a new folder  MutationsImmobilieresExe for example
 2. Open project in Unity
