@@ -33,7 +33,7 @@ Path : ./Contents/MacOS/MutationsImmobilieresVR
 
 ### Then you will find the .exe to run the application.
 
-    MutationsImmobilieresExe
+    MutationsImmobilieres.exe
    
 1. Click on "MutationsImmobilieresVR.exe"
 2. Use ZQSD to move the character front/back and left/right directions
