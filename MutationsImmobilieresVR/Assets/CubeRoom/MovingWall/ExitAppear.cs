@@ -9,6 +9,7 @@ public class ExitAppear : MonoBehaviour
     Transform Cube;
 
     public Transform ExitDoor;
+    public Transform ExitDoor2;
 
     float timer = 0f;
 
@@ -18,6 +19,10 @@ public class ExitAppear : MonoBehaviour
     {
         ExitDoor.GetComponent<MeshRenderer>().enabled = false;
         ExitDoor.GetComponent<ReturnRoom1>().enabled = false;
+
+        ExitDoor2.GetComponent<MeshRenderer>().enabled = false;
+        ExitDoor2.GetComponent<ExitRoomToLaby>().enabled = false;
+    
     }
 
     // Update is called once per frame
@@ -43,15 +48,24 @@ public class ExitAppear : MonoBehaviour
         if (timer > 30f)
         {
             int[] indexDoor = { 20, 21, 22, 30, 31, 32 };
+            int[] indexDoor2 = { 60, 61, 62, 70, 71, 72 };
             Wall = this.gameObject.transform.GetChild(2);
             for (int i = 0; i < indexDoor.Length; i++)
             {
                 Wall.transform.GetChild(indexDoor[i]).GetComponent<MeshRenderer>().enabled = false;
                 Wall.transform.GetChild(indexDoor[i]).GetComponent<BoxCollider>().enabled = false;
+            
+                Wall.transform.GetChild(indexDoor2[i]).GetComponent<MeshRenderer>().enabled = false;
+                Wall.transform.GetChild(indexDoor2[i]).GetComponent<BoxCollider>().enabled = false;
+            
             }
 
             ExitDoor.GetComponent<MeshRenderer>().enabled = true;
             ExitDoor.GetComponent<ReturnRoom1>().enabled = true;
+
+            ExitDoor2.GetComponent<MeshRenderer>().enabled = true;
+            ExitDoor2.GetComponent<ExitRoomToLaby>().enabled = true;
+
             timer = 0f;
             GetComponent<ExitAppear>().enabled = false;
         }
